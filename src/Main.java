@@ -28,8 +28,12 @@ public class Main {
 
         // Task 4
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int length = reverseFullName.length - 1; length >= 0; length-- ) {
-            System.out.print(reverseFullName[length]);
+        char temp;
+        for (int length = 0; length < reverseFullName.length / 2; length++) {
+            temp = reverseFullName[length];
+            reverseFullName[length] = reverseFullName[reverseFullName.length - 1 - length];
+            reverseFullName[reverseFullName.length - 1 - length] = temp;
         }
+        System.out.print(reverseFullName);
     }
 }
